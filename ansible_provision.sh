@@ -39,3 +39,16 @@ function conditional-install()
     fi
   fi
 }
+
+function apt-squid-deb-proxy() {
+    echo 'Acquire { Retries "0"; HTTP { Proxy "http://10.29.2.225:8000/"; };};' > /etc/apt/apt.conf
+}
+
+apt-squid-deb-proxy
+
+apt-get update
+apt-get install git python-yaml python-jinja2 python-pycurl -y
+git clone https://github.com/ansible/ansible.git
+cd ansible
+source ./hacking/env-setup
+ansible-galaxy install angstwad.docker_ubuntu
