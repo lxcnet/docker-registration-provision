@@ -47,8 +47,9 @@ function apt-squid-deb-proxy() {
 apt-squid-deb-proxy
 
 apt-get update
-apt-get install git python-yaml python-jinja2 python-pycurl -y
+apt-get install git python-yaml python-jinja2 python-pycurl python-pip -y
 git clone https://github.com/ansible/ansible.git
 cd ansible
 source ./hacking/env-setup
+pip install setuptools
 ansible-galaxy install angstwad.docker_ubuntu

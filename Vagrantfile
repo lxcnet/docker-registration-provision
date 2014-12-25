@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntuprecise"
   config.vm.box_url = "http://10.29.2.225:9292/hosted/ubuntuprecise.box"
-  config.vm.provision :shell, :path => "ansible_provision.sh", :args => ""
+  #config.vm.provision :shell, :path => "ansible_provision.sh", :args => ""
 # config.omnibus.chef_version = :latest
   config.vm.network :forwarded_port, guest: 80, host: 9881
   config.vm.network :forwarded_port, guest: 3000, host: 9882
